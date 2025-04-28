@@ -142,31 +142,26 @@ const ContactDrawer = ({ open, handleDrawerClose, contact, ticket, loading }) =>
                     </Avatar>}
 								title={
 									<>
-										<Typography onClick={() => setOpenForm(true)}>
+										<Typography>
 											{contact.name}
-											<CreateIcon style={{fontSize: 16, marginLeft: 5}} />
+											
 										</Typography>
 									</>
 								}
 								subheader={
 									<>
 										<Typography style={{fontSize: 12}}>
-											<Link href={`tel:${contact.number.slice(-6)}`}>{contact.number.slice(-6)}</Link>
-										</Typography>
+										<Link href={`tel:${contact.number.slice(-6)}`}>
+  {contact.number.slice(-6, -3) + ' ' + contact.number.slice(-3)}
+</Link>
+</Typography>
 										<Typography style={{fontSize: 12}}>
 											<Link href={`mailto:${contact.email}`}>{contact.email}</Link>
 										</Typography>
 									</>
 								}
 							/>
-							<Button
-								variant="outlined"
-								color="primary"
-								onClick={() => setModalOpen(!openForm)}
-								style={{fontSize: 12}}
-							>
-								{i18n.t("contactDrawer.buttons.edit")}
-							</Button>
+						
 							{(contact.id && openForm) && <ContactForm initialContact={contact} onCancel={() => setOpenForm(false)} />}
 						</Paper>
 						<Paper square variant="outlined" className={classes.contactDetails}>
