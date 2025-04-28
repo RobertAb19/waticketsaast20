@@ -334,11 +334,13 @@ const MainListItems = (props) => {
                 primary={i18n.t("Tarefas")}
                 icon={<BorderColorIcon />}
               />
-              <ListItemLink
-                to="/contacts"
-                primary={i18n.t("mainDrawer.listItems.contacts")}
-                icon={<ContactPhoneOutlinedIcon />}
-              />
+            {user.profile === "admin" && (
+		  <ListItemLink
+		    to="/contacts"
+		    primary={i18n.t("mainDrawer.listItems.contacts")}
+		    icon={<ContactPhoneOutlinedIcon />}
+		  />
+		)}
               {showSchedules && (
                 <>
                   <ListItemLink
