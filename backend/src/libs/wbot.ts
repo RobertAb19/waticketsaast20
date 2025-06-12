@@ -115,10 +115,10 @@ export const initWASocket = async (whatsapp: Whatsapp): Promise<Session> => {
         let retriesQrCode = 0;
 
         let wsocket: Session = null;
-        const store = makeInMemoryStore();
+       
 
         const { state, saveState } = await authState(whatsapp);
-
+         const store = makeInMemoryStore({ auth: state });
         const msgRetryCounterCache = new NodeCache();
         const userDevicesCache: CacheStore = new NodeCache();
 
