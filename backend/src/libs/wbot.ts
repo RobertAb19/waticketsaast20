@@ -115,9 +115,7 @@ export const initWASocket = async (whatsapp: Whatsapp): Promise<Session> => {
         let retriesQrCode = 0;
 
         let wsocket: Session = null;
-        const store = makeInMemoryStore({
-          logger: loggerBaileys
-        });
+        const store = makeInMemoryStore();
 
         const { state, saveState } = await authState(whatsapp);
 
@@ -337,7 +335,7 @@ export const initWASocket = async (whatsapp: Whatsapp): Promise<Session> => {
           }
         );
 
-        store.bind(wsocket.ev);
+       
       })();
     } catch (error) {
       Sentry.captureException(error);
