@@ -174,7 +174,9 @@ const TicketListItem = ({ ticket }) => {
                 variant="body2"
                 color="textPrimary"
               >
-                {ticket.contact.name}
+
+                  {ticket.contact.number.slice(-6, -3) + ' ' + ticket.contact.number.slice(-3)}
+              
               </Typography>
               {ticket.status === "closed" && (
                 <Badge
