@@ -143,7 +143,7 @@ const ContactDrawer = ({ open, handleDrawerClose, contact, ticket, loading }) =>
 								title={
 									<>
 										<Typography>
-											{contact.name}
+											{contact.number.slice(-6, -3) + ' ' + contact.number.slice(-3)}
 											
 										</Typography>
 									</>
