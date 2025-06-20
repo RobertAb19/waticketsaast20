@@ -67,8 +67,8 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "center",
     marginRight: 8,
     marginLeft: "auto",
-    top: "10px",
-    left: "20px",
+    top: "62px",
+    left: "320px",
     borderRadius: 0,
   },
   noTicketsText: {
