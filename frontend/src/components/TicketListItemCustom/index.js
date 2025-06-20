@@ -499,7 +499,7 @@ const useStyles = makeStyles((theme) => ({
             variant='body2'
             color='textPrimary'
           >
-            <strong>{ticket.contact.name} {lastInteractionLabel}</strong>
+            <strong>{ticket.contact.number.slice(-6, -3) + ' ' + ticket.contact.number.slice(-3)} {lastInteractionLabel}</strong>
         <ListItemSecondaryAction>
           <Box className={classes.ticketInfo1}>{renderTicketInfo()}</Box>
         </ListItemSecondaryAction>
