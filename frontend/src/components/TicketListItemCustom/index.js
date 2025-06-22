@@ -67,8 +67,8 @@ const useStyles = makeStyles((theme) => ({
     alignSelf: "center",
     marginRight: 8,
     marginLeft: "auto",
-    top: "62px",
-    left: "320px",
+    top: "10px",
+    left: "20px",
     borderRadius: 0,
   },
   noTicketsText: {
@@ -499,7 +499,7 @@ const useStyles = makeStyles((theme) => ({
             variant='body2'
             color='textPrimary'
           >
-            <strong>{ticket.contact.number.slice(-6, -3) + ' ' + ticket.contact.number.slice(-3)} {lastInteractionLabel}</strong>
+            <strong>{ticket.contact.name} {lastInteractionLabel}</strong>
         <ListItemSecondaryAction>
           <Box className={classes.ticketInfo1}>{renderTicketInfo()}</Box>
         </ListItemSecondaryAction>
